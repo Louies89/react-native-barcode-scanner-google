@@ -1,0 +1,12 @@
+1>> Added below option to ..\clenet\android\app\build.gradle  :
+
+    dexOptions {
+        jumboMode true //For react-native-barcode-scanner-google
+    }
+		
+2>>
+For IOS may be https://github.com/newoceaninfosys/react-native-barcode-scanner-google#readme this can be used. This is modified version of this library.
+
+3>> set to com.google.android.gms:play-services-vision:11.4.0'
+
+4>> This has been installed from npm install git+https://github.com/ekreutz/react-native-barcode-scanner-google.git#v1.3.0 --save

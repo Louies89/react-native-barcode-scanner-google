@@ -1,0 +1,21 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion project.hasProperty('compileSdkVersion') ? project.compileSdkVersion : 27        //Previously 26
+    buildToolsVersion project.hasProperty('buildToolsVersion') ? project.buildToolsVersion : "27.0.3"  //Previously"26.0.1"
+
+    defaultConfig {
+        minSdkVersion project.hasProperty('minSdkVersion') ? project.minSdkVersion : 16
+        targetSdkVersion project.hasProperty('targetSdkVersion') ? project.targetSdkVersion : 23
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
+dependencies {
+    def reactNativeVersion = project.hasProperty('reactNativeVersion') ? project.reactNativeVersion : "+"
+    def playServicesVision = project.hasProperty('playServicesVision') ? project.playServicesVision : "15.0.2"
+		
+    compile "com.google.android.gms:play-services-vision:$playServicesVision" //Previously 15.0.2 and 8.1.0 or higher required (adding 11.4.0 it was working but after few days it did not work)
+    compile "com.facebook.react:react-native:$reactNativeVersion" //Previously +
+}
